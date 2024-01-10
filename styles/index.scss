@@ -1,75 +1,9 @@
 @use './reset';
 @use './fonts';
-@use './breakpoint';
+@use './element';
+@use './overlay';
 @use './variables';
-
-.button {
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-size: 1.4rem;
-    line-height: 2.4rem;
-    letter-spacing: 4.375px;
-    text-transform: uppercase;
-    font-family: "Inter-Bold";
-    color: variables.$off-white;
-    background: variables.$soft-red;
-    padding: 1.3rem 3.5rem 1.1rem 3.1rem;
-}
-
-.line {
-    width: 100%;
-    height: 0.1rem;
-    margin-top: 2.9rem;
-    margin-bottom: 3.1rem;
-    background: variables.$dark-grayish-blue;
-}
-
-.overlay {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: fixed;
-    min-height: 100vh;
-    visibility: hidden;
-    background: rgba(variables.$very-dark-blue, 0.5);
-
-    .sidemenu {
-        right: -100%;
-        height: 100%;
-        position: absolute;
-        width: calc(100% - 11.9rem);
-        transition: right 0.4s ease;
-        padding: 2.7rem 2.9rem 0 2.4rem;
-        background: variables.$off-white;
-
-        .header {
-            display: flex;
-            margin-bottom: 8.6rem;
-            justify-content: flex-end;
-
-            img {
-                cursor: pointer;
-            }
-        }
-
-        .nav {
-            gap: 2.4rem;
-            display: flex;
-            flex-direction: column;
-
-            a {
-                cursor: pointer;
-                font-size: 1.8rem;
-                line-height: 2.4rem;
-                text-decoration: none;
-                font-family: "Inter-Regular";
-                color: variables.$very-dark-blue;
-            }
-        }
-    }
-}
+@use './breakpoint';
 
 body {
     padding: 2.8rem 1.6rem 7.5rem 1.6rem;
@@ -88,6 +22,10 @@ body {
             width: 4.50rem;
             height: 2.8rem;
         }
+
+        #nav {
+            display: none;
+        }
     }
 
     .intro {
@@ -95,6 +33,7 @@ body {
 
         .img {
             width: 100%;
+            height: 30rem;
             object-fit: cover;
             margin-bottom: 2.4rem;
         }
@@ -131,11 +70,16 @@ body {
         .list {
             &__item {
                 .title {
+                    cursor: pointer;
                     font-size: 2rem;
                     line-height: 2.4rem;
                     margin-bottom: 0.8rem;
                     color: variables.$off-white;
                     font-family: "Inter-ExtraBold";
+
+                    &:hover {
+                        color: variables.$soft-red;
+                    }
                 }
 
                 .body {
@@ -149,10 +93,7 @@ body {
     }
 
     .news {
-        gap: 3.2rem;
-        display: flex;
         margin-top: 6.4rem;
-        flex-direction: column;
 
         .list {
             gap: 3.2rem;
@@ -177,12 +118,17 @@ body {
                     }
 
                     .title {
+                        cursor: pointer;
                         font-size: 1.8rem;
                         margin-top: 1.2rem;
                         line-height: 2.4rem;
                         margin-bottom: 0.9rem;
                         font-family: "Inter-ExtraBold";
                         color: variables.$very-dark-blue;
+                        
+                        &:hover {
+                            color: variables.$soft-red;
+                        }
                     }
 
                     .body {
@@ -190,6 +136,106 @@ body {
                         line-height: 2.6rem;
                         font-family: "Inter-Regular";
                         color: variables.$dark-grayish-blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint.mq(desktop) {
+    body {
+        padding: 8.9rem 0 13rem;
+
+        .container {
+            width: 111rem;
+            margin: 0 auto;
+
+            .header {
+                margin-bottom: 5.5rem;
+
+                #menu {
+                    display: none;
+                }
+
+                #nav {
+                    gap: 4rem;
+                    display: flex;
+                    align-items: center;
+
+                    a {
+                        font-size: 1.5rem;
+                        line-height: 2.6rem;
+                        text-decoration: none;
+                        font-family: "Inter-Regular";
+                        color: variables.$dark-grayish-blue;
+
+                        &:hover {
+                            color: variables.$soft-red;
+                        }
+                    }
+                }
+
+                .logo {
+                    height: 4rem;
+                    width: 6.5rem;
+                }
+            }
+
+            .desktop__container {
+                gap: 3rem;
+                display: flex;
+                margin-bottom: 7.1rem;
+
+                .intro {
+                    margin-bottom: 0;
+            
+                    .img {
+                        width: 100%;
+                        margin-bottom: 2.8rem;
+                        content: url("/assets/images/image-web-3-desktop.jpg");
+                    }
+
+                    .intro__content {
+                        gap: 3rem;
+                        display: flex;
+                        align-items: center;
+
+                        .title {
+                            width: 35rem;
+                            margin-bottom: 0;
+                            font-size: 5.6rem;
+                            line-height: 5.6rem;
+                        }
+
+                        div {
+                            width: 35rem;
+                        }
+                    }
+                }
+            }
+
+            .new {
+                padding: 3.2rem 2.4rem 3.1rem;
+        
+                h1.title {
+                    font-size: 4rem;
+                    line-height: 4rem;
+                    margin-bottom: 3.4rem;
+                }
+            }
+
+            .news {
+                margin-top: 0;
+        
+                .list {
+                    gap: 3rem;
+                    flex-direction: row;
+
+                    &__item {
+                        .content {
+                            width: 22.6rem;
+                        }
                     }
                 }
             }

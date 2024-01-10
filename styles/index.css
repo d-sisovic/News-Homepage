@@ -45,6 +45,9 @@ img {
   background: hsl(5, 85%, 63%);
   padding: 1.3rem 3.5rem 1.1rem 3.1rem;
 }
+.button:hover {
+  background: hsl(240, 100%, 5%);
+}
 
 .line {
   width: 100%;
@@ -94,6 +97,9 @@ img {
   font-family: "Inter-Regular";
   color: hsl(240, 100%, 5%);
 }
+.overlay .sidemenu .nav a:hover {
+  color: hsl(5, 85%, 63%);
+}
 
 body {
   padding: 2.8rem 1.6rem 7.5rem 1.6rem;
@@ -111,11 +117,15 @@ body .header .logo {
   width: 4.5rem;
   height: 2.8rem;
 }
+body .header #nav {
+  display: none;
+}
 body .intro {
   margin-bottom: 6.4rem;
 }
 body .intro .img {
   width: 100%;
+  height: 30rem;
   -o-object-fit: cover;
      object-fit: cover;
   margin-bottom: 2.4rem;
@@ -146,11 +156,15 @@ body .new .title {
   color: hsl(35, 77%, 62%);
 }
 body .new .list__item .title {
+  cursor: pointer;
   font-size: 2rem;
   line-height: 2.4rem;
   margin-bottom: 0.8rem;
   color: hsl(36, 100%, 99%);
   font-family: "Inter-ExtraBold";
+}
+body .new .list__item .title:hover {
+  color: hsl(5, 85%, 63%);
 }
 body .new .list__item .body {
   font-size: 1.5rem;
@@ -159,10 +173,7 @@ body .new .list__item .body {
   color: hsl(233, 8%, 79%);
 }
 body .news {
-  gap: 3.2rem;
-  display: flex;
   margin-top: 6.4rem;
-  flex-direction: column;
 }
 body .news .list {
   gap: 3.2rem;
@@ -184,6 +195,7 @@ body .news .list__item .content .count {
   color: hsl(233, 8%, 79%);
 }
 body .news .list__item .content .title {
+  cursor: pointer;
   font-size: 1.8rem;
   margin-top: 1.2rem;
   line-height: 2.4rem;
@@ -191,9 +203,92 @@ body .news .list__item .content .title {
   font-family: "Inter-ExtraBold";
   color: hsl(240, 100%, 5%);
 }
+body .news .list__item .content .title:hover {
+  color: hsl(5, 85%, 63%);
+}
 body .news .list__item .content .body {
   font-size: 1.5rem;
   line-height: 2.6rem;
   font-family: "Inter-Regular";
   color: hsl(236, 13%, 42%);
+}
+
+@media (min-width: 90em) {
+  body {
+    padding: 8.9rem 0 13rem;
+  }
+  body .container {
+    width: 111rem;
+    margin: 0 auto;
+  }
+  body .container .header {
+    margin-bottom: 5.5rem;
+  }
+  body .container .header #menu {
+    display: none;
+  }
+  body .container .header #nav {
+    gap: 4rem;
+    display: flex;
+    align-items: center;
+  }
+  body .container .header #nav a {
+    font-size: 1.5rem;
+    line-height: 2.6rem;
+    text-decoration: none;
+    font-family: "Inter-Regular";
+    color: hsl(236, 13%, 42%);
+  }
+  body .container .header #nav a:hover {
+    color: hsl(5, 85%, 63%);
+  }
+  body .container .header .logo {
+    height: 4rem;
+    width: 6.5rem;
+  }
+  body .container .desktop__container {
+    gap: 3rem;
+    display: flex;
+    margin-bottom: 7.1rem;
+  }
+  body .container .desktop__container .intro {
+    margin-bottom: 0;
+  }
+  body .container .desktop__container .intro .img {
+    width: 100%;
+    margin-bottom: 2.8rem;
+    content: url("/assets/images/image-web-3-desktop.jpg");
+  }
+  body .container .desktop__container .intro .intro__content {
+    gap: 3rem;
+    display: flex;
+    align-items: center;
+  }
+  body .container .desktop__container .intro .intro__content .title {
+    width: 35rem;
+    margin-bottom: 0;
+    font-size: 5.6rem;
+    line-height: 5.6rem;
+  }
+  body .container .desktop__container .intro .intro__content div {
+    width: 35rem;
+  }
+  body .container .new {
+    padding: 3.2rem 2.4rem 3.1rem;
+  }
+  body .container .new h1.title {
+    font-size: 4rem;
+    line-height: 4rem;
+    margin-bottom: 3.4rem;
+  }
+  body .container .news {
+    margin-top: 0;
+  }
+  body .container .news .list {
+    gap: 3rem;
+    flex-direction: row;
+  }
+  body .container .news .list__item .content {
+    width: 22.6rem;
+  }
 }/*# sourceMappingURL=index.css.map */

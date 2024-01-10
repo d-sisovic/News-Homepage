@@ -5,10 +5,15 @@
     const sidemenuElement = document.querySelector('#sidemenu');
 
     const closeSidemenu = () => {
-        document.body.style.overflow = 'auto';
         sidemenuElement.style.right = '-100%';
-        overlayElement.style.visibility = 'hidden';
     };
+
+    sidemenuElement.addEventListener('transitionend', event => {
+        if (event.target.style.right === '0px') { return; }
+
+        document.body.style.overflow = 'auto';
+        overlayElement.style.visibility = 'hidden';
+    });
 
     menuElement.addEventListener('click', () => {
         document.body.style.overflow = 'hidden';
