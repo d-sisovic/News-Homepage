@@ -2,3 +2,197 @@
 @use './fonts';
 @use './breakpoint';
 @use './variables';
+
+.button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    letter-spacing: 4.375px;
+    text-transform: uppercase;
+    font-family: "Inter-Bold";
+    color: variables.$off-white;
+    background: variables.$soft-red;
+    padding: 1.3rem 3.5rem 1.1rem 3.1rem;
+}
+
+.line {
+    width: 100%;
+    height: 0.1rem;
+    margin-top: 2.9rem;
+    margin-bottom: 3.1rem;
+    background: variables.$dark-grayish-blue;
+}
+
+.overlay {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    min-height: 100vh;
+    visibility: hidden;
+    background: rgba(variables.$very-dark-blue, 0.5);
+
+    .sidemenu {
+        right: -100%;
+        height: 100%;
+        position: absolute;
+        width: calc(100% - 11.9rem);
+        transition: right 0.4s ease;
+        padding: 2.7rem 2.9rem 0 2.4rem;
+        background: variables.$off-white;
+
+        .header {
+            display: flex;
+            margin-bottom: 8.6rem;
+            justify-content: flex-end;
+
+            img {
+                cursor: pointer;
+            }
+        }
+
+        .nav {
+            gap: 2.4rem;
+            display: flex;
+            flex-direction: column;
+
+            a {
+                cursor: pointer;
+                font-size: 1.8rem;
+                line-height: 2.4rem;
+                text-decoration: none;
+                font-family: "Inter-Regular";
+                color: variables.$very-dark-blue;
+            }
+        }
+    }
+}
+
+body {
+    padding: 2.8rem 1.6rem 7.5rem 1.6rem;
+
+    .header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 3.2rem;
+        justify-content: space-between;
+
+        img {
+            cursor: pointer;
+        }
+
+        .logo {
+            width: 4.50rem;
+            height: 2.8rem;
+        }
+    }
+
+    .intro {
+        margin-bottom: 6.4rem;
+
+        .img {
+            width: 100%;
+            object-fit: cover;
+            margin-bottom: 2.4rem;
+        }
+
+        .title {
+            font-size: 4.0rem;
+            line-height: 4rem;
+            margin-bottom: 1.6rem;
+            font-family: "Inter-ExtraBold";
+            color: variables.$very-dark-blue;
+        }
+
+        .body {
+            font-size: 1.5rem;
+            line-height: 2.6rem;
+            margin-bottom: 2.4rem;
+            font-family: "Inter-Regular";
+            color: variables.$dark-grayish-blue;
+        }
+    }
+
+    .new {
+        padding: 2.4rem 2rem 2.4rem 2.1rem;
+        background: variables.$very-dark-blue;
+
+        .title {
+            font-size: 3.2rem;
+            line-height: 3.2rem;
+            margin-bottom: 3.5rem;
+            font-family: "Inter-Bold";
+            color: variables.$soft-orange;
+        }
+
+        .list {
+            &__item {
+                .title {
+                    font-size: 2rem;
+                    line-height: 2.4rem;
+                    margin-bottom: 0.8rem;
+                    color: variables.$off-white;
+                    font-family: "Inter-ExtraBold";
+                }
+
+                .body {
+                    font-size: 1.5rem;
+                    line-height: 2.6rem;
+                    font-family: "Inter-Regular";
+                    color: variables.$grayish-blue;
+                }
+            }
+        }
+    }
+
+    .news {
+        gap: 3.2rem;
+        display: flex;
+        margin-top: 6.4rem;
+        flex-direction: column;
+
+        .list {
+            gap: 3.2rem;
+            display: flex;
+            flex-direction: column;
+
+            &__item {
+                gap: 2.4rem;
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: 10rem;
+                }
+
+                .content {
+                    .count {
+                        font-size: 3.2rem;
+                        line-height: 3.2rem;
+                        font-family: "Inter-Bold";
+                        color: variables.$grayish-blue;
+                    }
+
+                    .title {
+                        font-size: 1.8rem;
+                        margin-top: 1.2rem;
+                        line-height: 2.4rem;
+                        margin-bottom: 0.9rem;
+                        font-family: "Inter-ExtraBold";
+                        color: variables.$very-dark-blue;
+                    }
+
+                    .body {
+                        font-size: 1.5rem;
+                        line-height: 2.6rem;
+                        font-family: "Inter-Regular";
+                        color: variables.$dark-grayish-blue;
+                    }
+                }
+            }
+        }
+    }
+}
