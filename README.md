@@ -15,8 +15,8 @@ This is a solution to the [News homepage challenge on Frontend Mentor](https://w
 
 ### Links
 
-- Solution URL: []
-- Live Site URL: []
+- Solution URL: [https://www.frontendmentor.io/challenges/news-homepage-H6SWTa1MFl/hub?share=true]
+- Live Site URL: [https://d-sisovic.github.io/News-Homepage/]
 
 ### Built with
 
