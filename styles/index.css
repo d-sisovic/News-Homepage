@@ -257,7 +257,7 @@ body .news .list__item .content .body {
   body .container .desktop__container .intro .img {
     width: 100%;
     margin-bottom: 2.8rem;
-    content: url("/assets/images/image-web-3-desktop.jpg");
+    content: url("/News-Homepage/assets/images/image-web-3-desktop.jpg");
   }
   body .container .desktop__container .intro .intro__content {
     gap: 3rem;
